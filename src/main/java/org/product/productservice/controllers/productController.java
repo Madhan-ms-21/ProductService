@@ -5,6 +5,8 @@ import org.product.productservice.dtos.createProductDto;
 import org.product.productservice.models.product;
 import org.product.productservice.services.productService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,6 +27,7 @@ public class productController {
 
     @GetMapping("/")
     public List<product> getAllProducts(){
+//        Pageable pageable = PageRequest.of()
         return productservice.getAllProduct();
     }
 

@@ -6,6 +6,8 @@ import org.product.productservice.dtos.createProductDto;
 import org.product.productservice.models.product;
 import org.product.productservice.repositories.productRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,6 +32,7 @@ public class productService {
         return productRepository.findById(id);
     }
     public List<product> getAllProduct(){
+//        Pageable pageable = PageRequest.of()
         return productRepository.findAll();
     }
     public product updateProduct(product product){
